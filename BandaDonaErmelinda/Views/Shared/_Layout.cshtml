@@ -1,49 +1,84 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    
     <title>@ViewData["Title"] - BandaDonaErmelinda</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/BandaDonaErmelinda.styles.css" asp-append-version="true"/>
-</head>
-<body>
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BandaDonaErmelinda</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderBody()
-    </main>
-</div>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+    <link href="~/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="~/css/style.css">
+  
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2023 - BandaDonaErmelinda - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
-</footer>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
+</head>
+ <body >
+ 		
+ 		<div id="site-content">
+ 			<header class="site-header">
+ 				<div class="container">
+ 					<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" id="branding">
+ 						<img src="~/images/band.png" style="height: 80px;" alt="Site Title">
+ 						<!-- <small class="site-description">Banda Dona Ermelinda</small> -->
+ 					</a> <!-- #branding -->
+ 					
+ 					<nav class="main-navigation">
+ 						<button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+ 						<ul class="menu">
+	                        <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "current-menu-item" : "")">
+		                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+	                        </li>
+	                        <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "About" ? "current-menu-item" : "")">
+		                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">Sobre</a>
+	                        </li>
+	                        <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Galeria" ? "current-menu-item" : "")">
+		                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Galeria">Galeria</a>
+	                        </li>
+	                        <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Contato" ? "current-menu-item" : "")">
+		                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contato">Contato</a>
+	                        </li>
+ 						</ul> <!-- .menu -->
+ 					</nav> <!-- .main-navigation -->
+ 					<div class="mobile-menu"></div>
+ 				</div>
+ 			</header> <!-- .site-header -->
+ 			
+
+			@RenderBody()
+ 			<footer class="site-footer">
+ 				<div class="container">
+ 					<img src="~/dummy/logo-footer.png" alt="Site Name">
+ 					
+ 					<address>
+ 						<p>495 Brainard St. Detroit, MI 48201 <br><a href="tel:354543543">(563) 429 234 890</a> <br> <a href="mailto:info@bandname.com">info@bandname.com</a></p> 
+ 					</address> 
+ 					
+ 					<form action="#" class="newsletter-form">
+ 						<input type="email" placeholder="Enter your email to join newsletter...">
+ 						<input type="submit" class="button cut-corner" value="Subscribe">
+ 					</form> <!-- .newsletter-form -->
+ 					
+ 					<div class="social-links">
+ 						<a href="#"><i class="fa fa-facebook-square"></i></a>
+ 						<a href="#"><i class="fa fa-twitter"></i></a>
+ 						<a href="#"><i class="fa fa-google-plus"></i></a>
+ 						<a href="#"><i class="fa fa-pinterest"></i></a>
+ 					</div> <!-- .social-links -->
+ 					
+ 					<p class="copy">Copyright 2014 Company Name. Designed by Themezy. All right reserved</p>
+ 				</div>
+ 			</footer> <!-- .site-footer -->
+ 
+ 		</div> <!-- #site-content -->
+
+ 
+
+<script src="~/js/jquery-1.11.1.min.js"></script>		
+<script src="~/js/plugins.js"></script>
+<script src="~/js/app.js"></script>
+
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
