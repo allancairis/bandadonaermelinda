@@ -14,66 +14,66 @@
   
 
 </head>
- <body >
+<body >
  		
- 		<div id="site-content">
- 			<header class="site-header">
- 				<div class="container">
- 					<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" id="branding">
- 						<img src="~/images/band.png" style="height: 80px;" alt="Site Title">
- 						<!-- <small class="site-description">Banda Dona Ermelinda</small> -->
- 					</a> <!-- #branding -->
+<div id="site-content">
+	<header class="site-header">
+		<div class="container">
+			<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" id="branding">
+				<img src="~/images/band.png" style="height: 80px;" alt="Site Title">
+				<!-- <small class="site-description">Banda Dona Ermelinda</small> -->
+			</a> <!-- #branding -->
  					
- 					<nav class="main-navigation">
- 						<button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
- 						<ul class="menu">
-	                        <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "current-menu-item" : "")">
-		                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-	                        </li>
-	                        <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "About" ? "current-menu-item" : "")">
-		                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">Sobre</a>
-	                        </li>
-	                        <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Galeria" ? "current-menu-item" : "")">
-		                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Galeria">Galeria</a>
-	                        </li>
-	                        <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Contato" ? "current-menu-item" : "")">
-		                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contato">Contato</a>
-	                        </li>
- 						</ul> <!-- .menu -->
- 					</nav> <!-- .main-navigation -->
- 					<div class="mobile-menu"></div>
- 				</div>
- 			</header> <!-- .site-header -->
+			<nav class="main-navigation">
+				<button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+				<ul class="menu">
+					<li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "current-menu-item" : "")">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+					</li>
+					<li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "About" ? "current-menu-item" : "")">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">Sobre</a>
+					</li>
+					<li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Galeria" ? "current-menu-item" : "")">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Galeria">Galeria</a>
+					</li>
+					<li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Contato" ? "current-menu-item" : "")">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contato">Contato</a>
+					</li>
+				</ul> <!-- .menu -->
+			</nav> <!-- .main-navigation -->
+			<div class="mobile-menu"></div>
+		</div>
+	</header> <!-- .site-header -->
  			
 
-			@RenderBody()
- 			<footer class="site-footer">
- 				<div class="container">
- 					<img src="~/dummy/band-removebg-preview.png" alt="Site Name">
+	@RenderBody()
+	<footer class="site-footer">
+		<div class="container">
+			<img src="~/dummy/band-removebg-preview.png" alt="Site Name">
  					
- 					<address>
-                        <p>
-                            R. Bom Jardim, 22 - Vila Ermelinda, Belo Horizonte - MG, 31250-200 <br><a href="tel:</a> <br> <a href="mailto:info@donaermelinda.com.br">info@bandname.com</a>
-                        </p> 
- 					</address> 
+			<address>
+				<p>
+					R. Bom Jardim, 22 - Vila Ermelinda, Belo Horizonte - MG, 31250-200 <br><a href="tel:</a> <br> <a href="mailto:info@donaermelinda.com.br">info@bandname.com</a>
+				</p> 
+			</address> 
  					
- 					<form action="#" class="newsletter-form">
- 						<input type="email" placeholder="Entre com seu e-mail para receber nossa newsletter...">
- 						<input type="submit" class="button cut-corner" value="Assinar">
- 					</form> <!-- .newsletter-form -->
+			<form action="#" class="newsletter-form">
+				<input type="email" placeholder="Entre com seu e-mail para receber nossa newsletter...">
+				<input type="submit" class="button cut-corner" value="Assinar">
+			</form> <!-- .newsletter-form -->
  					
- 					<div class="social-links">
- 						<a href="#"><i class="fa fa-facebook-square"></i></a>
- 						<a href="#"><i class="fa fa-twitter"></i></a>
- 						<a href="#"><i class="fa fa-google-plus"></i></a>
- 						<a href="#"><i class="fa fa-pinterest"></i></a>
- 					</div> <!-- .social-links -->
+			<div class="social-links">
+				<a href="#"><i class="fa fa-facebook-square"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-google-plus"></i></a>
+				<a href="#"><i class="fa fa-pinterest"></i></a>
+			</div> <!-- .social-links -->
  					
- 					<p class="copy">Copyright 2023 Banda Dona Ermelinda. Developed by Allan Cairis. Todos direitos reservados. </p>
- 				</div>
- 			</footer> <!-- .site-footer -->
+			<p class="copy">Copyright 2023 Banda Dona Ermelinda. Developed by Allan Cairis. Todos direitos reservados. </p>
+		</div>
+	</footer> <!-- .site-footer -->
  
- 		</div> <!-- #site-content -->
+</div> <!-- #site-content -->
 
  
 
@@ -83,4 +83,5 @@
 
 @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

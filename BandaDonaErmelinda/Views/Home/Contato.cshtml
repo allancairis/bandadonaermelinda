@@ -8,11 +8,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <form action="#" class="contact-form">
-                        <input type="text" placeholder="Seu nome"..>
-                        <input type="text" placeholder="Email..">
-                        <input type="text" placeholder="Website...">
-                        <textarea name="#" placeholder="Messagem..."></textarea>
-                        <input type="submit" value="Enviar messagem">
+                        <input type="text" id="txtNome" placeholder="Seu nome"..>
+                        <input type="text" id="txtEmail" placeholder="Email..">
+                        <input type="text" id="txtWebsite" placeholder="Website...">
+                        <textarea name="#" id="txtMensagem" placeholder="Messagem..."></textarea>
+                        <input type="submit" id="enviar" value="Enviar messagem">
+                       <!-- <a href="javascript:;" class="btn btn-primary" id="enviar">Enviar messagem</a>-->
                     </form>
                 </div>
                 
@@ -22,3 +23,9 @@
 
 				
 </main> <!-- .main-content -->
+
+@section Scripts
+{
+ <script src="~/js/Contato.js"></script>
+
+}
