@@ -10,7 +10,6 @@
                     <form action="#" class="contact-form">
                         <input type="text" id="txtNome" placeholder="Seu nome"..>
                         <input type="text" id="txtEmail" placeholder="Email..">
-                        <input type="text" id="txtWebsite" placeholder="Website...">
                         <textarea name="#" id="txtMensagem" placeholder="Messagem..."></textarea>
                         <input type="submit" id="enviar" value="Enviar messagem">
                        <!-- <a href="javascript:;" class="btn btn-primary" id="enviar">Enviar messagem</a>-->
@@ -28,11 +27,22 @@
 {
     <script type="text/javascript">
      $("#enviar").click(function () {
+         
+        // Obter os valores dos campos
+        var nome = $("#txtNome").val();
+        var email = $("#txtEmail").val();
+        var mensagem = $("#txtMensagem").val();
+
+        // Validar os campos
+        if (!nome || !email || !mensagem || !website) {
+            // Emitir um alerta se algum campo estiver vazio
+            alert("Por favor, preencha todos os campos.");
+            return;
+        } 
         var dados = {
             txtNome: $("#txtNome").val(),
             txtEmail: $("#txtEmail").val(),
-            txtMensagem: $("#txtMensagem").val(),
-            txtWebsite: $("#txtWebsite").val()
+            txtMensagem: $("#txtMensagem").val()
         };
         $.ajax({
             url: '@Url.Action("SendEmail", "Home")',

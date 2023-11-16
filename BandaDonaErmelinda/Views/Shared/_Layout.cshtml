@@ -53,7 +53,7 @@
  					
 			<address>
 				<p>
-					R. Bom Jardim, 22 - Vila Ermelinda, Belo Horizonte - MG, 31250-200 <br><a href="tel:</a> <br> <a href="mailto:info@donaermelinda.com.br">info@bandname.com</a>
+					R. Bom Jardim, 22 - Vila Ermelinda, Belo Horizonte - MG, 31250-200 <br>
 				</p> 
 			</address> 
  					
@@ -61,13 +61,6 @@
 				<input type="email" id="emailInput" placeholder="Entre com seu e-mail para receber nossa newsletter...">
 				<input type="submit" id="subscribeButton" class="button cut-corner" value="Assinar">
 			</form> <!-- .newsletter-form -->
- 					
-			<div class="social-links">
-				<a href="#"><i class="fa fa-facebook-square"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-google-plus"></i></a>
-				<a href="#"><i class="fa fa-pinterest"></i></a>
-			</div> <!-- .social-links -->
  					
 			<p class="copy">Copyright 2023 Banda Dona Ermelinda. Developed by Allan Cairis. Todos direitos reservados. </p>
 		</div>
@@ -85,7 +78,14 @@
         $("#subscribeButton").click(function (e) {
             e.preventDefault(); // Impede o envio tradicional do formulário
 
-            var email = $("#emailInput").val();
+                    var email = $("#emailInput").val();
+            
+                    // Verificar se o campo de e-mail está vazio
+                    if (!email) {
+                        // Emitir um alerta e parar a execução
+                        alert("Por favor, preencha o campo de e-mail.");
+                        return;
+                    }
 
             $.ajax({
                 url: "/Home/Subscribe",
