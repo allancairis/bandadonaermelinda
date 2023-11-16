@@ -11,7 +11,7 @@
     <link href="~/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Loading main css file -->
     <link rel="stylesheet" href="~/css/style.css">
-  
+    <link rel="icon href="~/css/favicon.ico" type="image/x-icon">
 
 </head>
 <body >
@@ -58,8 +58,8 @@
 			</address> 
  					
 			<form action="#" class="newsletter-form">
-				<input type="email" placeholder="Entre com seu e-mail para receber nossa newsletter...">
-				<input type="submit" class="button cut-corner" value="Assinar">
+				<input type="email" id="emailInput" placeholder="Entre com seu e-mail para receber nossa newsletter...">
+				<input type="submit" id="subscribeButton" class="button cut-corner" value="Assinar">
 			</form> <!-- .newsletter-form -->
  					
 			<div class="social-links">
@@ -80,7 +80,36 @@
 <script src="~/js/jquery-1.11.1.min.js"></script>		
 <script src="~/js/plugins.js"></script>
 <script src="~/js/app.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#subscribeButton").click(function (e) {
+            e.preventDefault(); // Impede o envio tradicional do formulário
 
+            var email = $("#emailInput").val();
+
+            $.ajax({
+                url: "/Home/Subscribe",
+                type: "POST",
+                data: { email: email },
+                success: function (result) {
+                    // Manipule o resultado conforme necessário
+                    console.log(result);
+
+                    // Exemplo de manipulação do resultado (pode ser ajustado conforme necessário)
+                    if (result.success) {
+                        alert("Inscrição bem-sucedida!");
+                    } else {
+                        alert("Erro: " + result.message);
+                    }
+                },
+                error: function (error) {
+                    // Manipule o erro conforme necessário
+                    console.error(error);
+                }
+            });
+        });
+    });
+</script>
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 

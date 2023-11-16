@@ -26,6 +26,31 @@
 
 @section Scripts
 {
- <script src="~/js/Contato.js"></script>
+    <script type="text/javascript">
+     $("#enviar").click(function () {
+        var dados = {
+            txtNome: $("#txtNome").val(),
+            txtEmail: $("#txtEmail").val(),
+            txtMensagem: $("#txtMensagem").val(),
+            txtWebsite: $("#txtWebsite").val()
+        };
+        $.ajax({
+            url: '@Url.Action("SendEmail", "Home")',
+            type: 'POST',
+            data: dados,
+            success: function (result) {
+                if (result.success) {
+                    alert("Inscrição bem-sucedida!");
+                } else {
+                    alert("Erro: " + result.message);
+                }
+            },
+            error: function () {
+                // Lógica para lidar com erros
+                console.log("Erro ao enviar dados.");
+            }
+        });
+    });
+    </script>
 
 }

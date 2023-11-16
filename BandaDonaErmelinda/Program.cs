@@ -1,8 +1,16 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System.Net;
 using System.Net.Mail;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configurar o DbContext aqui
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -30,3 +38,5 @@ app.MapControllerRoute(
 
 
 app.Run();
+
+ 
